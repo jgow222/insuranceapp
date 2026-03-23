@@ -104,7 +104,7 @@ const TRANSLATIONS = {
     final_cta: 'Analyze My Claim — Free',
 
     // Footer
-    footer_credit: 'Created with Perplexity Computer',
+    footer_credit: '',
 
     // Exit modal
     exit_title: 'Before you go…',
@@ -333,7 +333,7 @@ const TRANSLATIONS = {
     final_cta: 'Analizar Mi Reclamo — Gratis',
 
     // Footer
-    footer_credit: 'Creado con Perplexity Computer',
+    footer_credit: '',
 
     // Exit modal
     exit_title: 'Antes de irte…',
