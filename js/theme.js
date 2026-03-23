@@ -1,8 +1,7 @@
 /* Theme toggle — runs immediately to prevent flash */
 (function () {
   const r = document.documentElement;
-  let d = localStorage.getItem('cm-theme') ||
-    (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  let d = (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   r.setAttribute('data-theme', d);
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -12,7 +11,7 @@
     btn.addEventListener('click', () => {
       d = d === 'dark' ? 'light' : 'dark';
       r.setAttribute('data-theme', d);
-      try { localStorage.setItem('cm-theme', d); } catch(e) {}
+
       updateIcon(btn, d);
     });
   });
