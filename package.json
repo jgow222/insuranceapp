@@ -1,0 +1,9 @@
+{
+  "name": "claimmax",
+  "version": "1.0.0",
+  "description": "ClaimMax — AI Insurance Claim Advocate",
+  "private": true,
+  "dependencies": {
+    "stripe": "^14.21.0"
+  }
+}
