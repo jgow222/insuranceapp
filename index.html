@@ -11,395 +11,265 @@
         Created with Perplexity Computer
         https://www.perplexity.ai/computer
 -->
-<!-- Perplexity Computer Attribution — SEO Meta Tags -->
 <meta name="generator" content="Perplexity Computer">
 <meta name="author" content="Perplexity Computer">
 <meta property="og:see_also" content="https://www.perplexity.ai/computer">
 <link rel="author" href="https://www.perplexity.ai/computer">
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ClaimMax — Fight Back. Get Paid More.</title>
   <meta name="description" content="AI-powered insurance claim advocate. Upload your policy, document the damage, and get what you're actually owed. You only pay if we win you more money.">
-
-  <!-- Fonts -->
   <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800,900&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/landing.css">
-
-  <!-- Theme (no flash) -->
+  <link rel="stylesheet" href="css/exit.css">
   <script src="js/theme.js"></script>
 </head>
 <body>
 
-  <!-- ── NAV ────────────────────────────── -->
+  <!-- ── NAV ──────────────────────────────────── -->
   <nav class="nav">
     <a href="index.html" class="nav-logo">
-      <!-- ClaimMax Logo SVG -->
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-label="ClaimMax" xmlns="http://www.w3.org/2000/svg">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-label="ClaimMax">
         <rect width="28" height="28" rx="7" fill="var(--color-primary)"/>
         <path d="M8 14.5L12 18.5L20 9.5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       ClaimMax
     </a>
     <ul class="nav-links">
-      <li><a href="#how-it-works">How it Works</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#results">Results</a></li>
+      <li><a href="#how-it-works" data-i18n="nav_how">How it Works</a></li>
+      <li><a href="#pricing" data-i18n="nav_pricing">Pricing</a></li>
+      <li><a href="#results" data-i18n="nav_results">Results</a></li>
     </ul>
     <div class="nav-actions">
-      <button class="nav-theme-toggle" data-theme-toggle aria-label="Toggle theme">
-        <!-- icon injected by JS -->
-      </button>
-      <a href="pages/claim.html" class="btn btn-primary btn-sm">Start a Claim</a>
+      <button class="btn-lang" data-lang-toggle onclick="toggleLanguage()" aria-label="Switch to Spanish">ES</button>
+      <button class="nav-theme-toggle" data-theme-toggle aria-label="Toggle theme"></button>
+      <a href="pages/claim.html" class="btn btn-primary btn-sm" data-i18n="nav_start">Start a Claim</a>
     </div>
   </nav>
 
-  <!-- ── HERO ───────────────────────────── -->
+  <!-- ── HERO ──────────────────────────────────── -->
   <section class="hero section">
     <div class="container">
       <div class="hero-inner">
         <div class="hero-content">
           <div class="badge badge-green hero-badge">
             <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4" fill="currentColor"/></svg>
-            AI Claim Advocate — Auto &amp; Renters Insurance
+            <span data-i18n="hero_badge">AI Claim Advocate — Auto &amp; Renters Insurance</span>
           </div>
           <h1 class="hero-title">
-            Your insurer<br>
-            works against you.<br>
-            <span class="hero-accent">We don't.</span>
+            <span data-i18n="hero_title_1">Your insurer</span><br>
+            <span data-i18n="hero_title_2">works against you.</span><br>
+            <span class="hero-accent" data-i18n="hero_title_3">We don't.</span>
           </h1>
-          <p class="hero-subtitle">
-            Upload your policy and damage evidence. ClaimMax tells you exactly
-            what you're owed, drafts a demand letter, and tracks the insurer's
-            response. You only pay if we win you more money.
+          <p class="hero-subtitle" data-i18n="hero_subtitle">
+            Upload your policy and damage evidence. ClaimMax tells you exactly what you're owed, drafts a demand letter, and tracks the insurer's response. You only pay if we win you more money.
           </p>
           <div class="hero-cta">
             <a href="pages/claim.html" class="btn btn-primary btn-lg">
-              Analyze My Claim — Free
+              <span data-i18n="hero_cta">Analyze My Claim — Free</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
-            <span class="hero-cta-note">No credit card. Pay only when you win more.</span>
+            <span class="hero-cta-note" data-i18n="hero_note">No credit card. Pay only when you win more.</span>
           </div>
         </div>
+
         <div class="hero-visual">
           <div class="claim-card">
             <div class="claim-card-header">
-              <span class="badge badge-green">Claim Analysis Ready</span>
-              <span class="claim-card-time">Just now</span>
+              <span class="badge badge-green">
+                <svg width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4" fill="currentColor"/></svg>
+                <span data-i18n="hero_card_badge">Claim Analysis Ready</span>
+              </span>
+              <span class="claim-card-time" data-i18n="hero_card_just_now">Just now</span>
             </div>
             <div class="claim-card-body">
               <div class="claim-comparison">
                 <div class="claim-offer">
-                  <div class="offer-label">Insurer's Offer</div>
+                  <div class="offer-label" data-i18n="hero_card_offer">Insurer's Offer</div>
                   <div class="offer-amount offer-low">$4,200</div>
                 </div>
                 <div class="claim-arrow">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </div>
                 <div class="claim-offer">
-                  <div class="offer-label">You're Owed</div>
+                  <div class="offer-label" data-i18n="hero_card_owed">You're Owed</div>
                   <div class="offer-amount offer-high">$8,100</div>
                 </div>
               </div>
               <div class="claim-delta">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                <strong>$3,900 more</strong> identified in your policy
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                <span data-i18n="hero_card_delta"><strong>$3,900 more</strong> identified in your policy</span>
               </div>
             </div>
             <div class="claim-card-footer">
               <div class="evidence-checks">
-                <span class="check-item done">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                  Policy analyzed
-                </span>
-                <span class="check-item done">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                  Evidence documented
-                </span>
-                <span class="check-item done">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                  Demand letter ready
-                </span>
+                <span class="check-item done"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="hero_check_1">Policy analyzed</span></span>
+                <span class="check-item done"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="hero_check_2">Evidence documented</span></span>
+                <span class="check-item done"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="hero_check_3">Demand letter ready</span></span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Stats bar -->
       <div class="hero-stats">
-        <div class="stat-block">
-          <div class="stat-value">22%</div>
-          <div class="stat-label">Avg. recovery delta above initial offer</div>
-        </div>
+        <div class="stat-block"><div class="stat-value" data-i18n="stat_1_val">22%</div><div class="stat-label" data-i18n="stat_1_label">Avg. recovery delta above initial offer</div></div>
         <div class="stat-divider"></div>
-        <div class="stat-block">
-          <div class="stat-value">$8,400</div>
-          <div class="stat-label">Average claim size we handle</div>
-        </div>
+        <div class="stat-block"><div class="stat-value" data-i18n="stat_2_val">$8,400</div><div class="stat-label" data-i18n="stat_2_label">Average claim size we handle</div></div>
         <div class="stat-divider"></div>
-        <div class="stat-block">
-          <div class="stat-value">60s</div>
-          <div class="stat-label">Policy analyzed in under a minute</div>
-        </div>
+        <div class="stat-block"><div class="stat-value" data-i18n="stat_3_val">60s</div><div class="stat-label" data-i18n="stat_3_label">Policy analyzed in under a minute</div></div>
         <div class="stat-divider"></div>
-        <div class="stat-block">
-          <div class="stat-value">0%</div>
-          <div class="stat-label">Fee if we don't improve your outcome</div>
-        </div>
+        <div class="stat-block"><div class="stat-value" data-i18n="stat_4_val">0%</div><div class="stat-label" data-i18n="stat_4_label">Fee if we don't improve your outcome</div></div>
       </div>
     </div>
   </section>
 
-  <!-- ── PROBLEM ─────────────────────────── -->
+  <!-- ── PROBLEM ────────────────────────────────── -->
   <section class="section problem-section" id="why">
     <div class="container-narrow">
-      <div class="section-label">The Problem</div>
-      <h2 class="section-title">Insurance is built to minimize your payout.</h2>
-      <p class="section-subtitle">
-        When you file a claim, adjusters work for the insurer — not for you.
-        The average person has no idea what their policy actually covers, no way
-        to evaluate whether the initial offer is fair, and no leverage to push back.
-      </p>
+      <div class="section-label" data-i18n="problem_label">The Problem</div>
+      <h2 class="section-title" data-i18n="problem_title">Insurance is built to minimize your payout.</h2>
+      <p class="section-subtitle" data-i18n="problem_subtitle">When you file a claim, adjusters work for the insurer — not for you. The average person has no idea what their policy actually covers, no way to evaluate whether the initial offer is fair, and no leverage to push back.</p>
       <div class="problem-callout">
-        <blockquote class="pull-quote">
-          "They accepted less money than they were owed because fighting back felt
-          impossible without a lawyer."
-        </blockquote>
+        <blockquote class="pull-quote" data-i18n="problem_quote">"They accepted less money than they were owed because fighting back felt impossible without a lawyer."</blockquote>
       </div>
-      <div class="grid-3" style="margin-top: var(--space-12);">
+      <div class="grid-3" style="margin-top:var(--space-12)">
         <div class="problem-card">
-          <div class="problem-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-          </div>
-          <h3>80-page policies</h3>
-          <p>Most people never read their insurance policy. Insurers count on that.</p>
+          <div class="problem-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+          <h3 data-i18n="problem_1_title">80-page policies</h3>
+          <p data-i18n="problem_1_body">Most people never read their insurance policy. Insurers count on that.</p>
         </div>
         <div class="problem-card">
-          <div class="problem-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          </div>
-          <h3>Low-ball first offers</h3>
-          <p>Initial settlement offers are routinely 20–40% below what you're entitled to.</p>
+          <div class="problem-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+          <h3 data-i18n="problem_2_title">Low-ball first offers</h3>
+          <p data-i18n="problem_2_body">Initial settlement offers are routinely 20–40% below what you're entitled to.</p>
         </div>
         <div class="problem-card">
-          <div class="problem-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-          </div>
-          <h3>No leverage without a lawyer</h3>
-          <p>Hiring an attorney means giving up 33% of your settlement. ClaimMax costs 10-15% — only if you win more.</p>
+          <div class="problem-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg></div>
+          <h3 data-i18n="problem_3_title">No leverage without a lawyer</h3>
+          <p data-i18n="problem_3_body">Hiring an attorney means giving up 33% of your settlement. ClaimMax costs 10–15% — only if you win more.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── HOW IT WORKS ────────────────────── -->
-  <section class="section" id="how-it-works" style="background: var(--color-surface);">
+  <!-- ── HOW IT WORKS ───────────────────────────── -->
+  <section class="section" id="how-it-works" style="background:var(--color-surface);">
     <div class="container">
-      <div class="section-label">How It Works</div>
-      <h2 class="section-title">Five steps. One goal: more money.</h2>
-      <p class="section-subtitle">ClaimMax walks you through every step. Our AI does the heavy lifting.</p>
-
+      <div class="section-label" data-i18n="how_label">How It Works</div>
+      <h2 class="section-title" data-i18n="how_title">Five steps. One goal: more money.</h2>
+      <p class="section-subtitle" data-i18n="how_subtitle">ClaimMax walks you through every step. Our AI does the heavy lifting.</p>
       <div class="how-steps">
-        <div class="how-step">
-          <div class="how-step-num">1</div>
-          <div class="how-step-content">
-            <h3>Upload your policy</h3>
-            <p>Photograph or upload your policy PDF. AI extracts coverage limits, exclusions, deductibles, and endorsements in plain English — within 60 seconds.</p>
-          </div>
-        </div>
-        <div class="how-step">
-          <div class="how-step-num">2</div>
-          <div class="how-step-content">
-            <h3>Document the incident</h3>
-            <p>Follow the guided photo checklist. Timestamped uploads, witness info, police report linkage. AI flags missing evidence before you submit.</p>
-          </div>
-        </div>
-        <div class="how-step">
-          <div class="how-step-num">3</div>
-          <div class="how-step-content">
-            <h3>Get your Claim Score</h3>
-            <p>AI compares the insurer's offer against your policy terms, comparable settlements, and market repair costs. Surfaces the gap instantly.</p>
-          </div>
-        </div>
-        <div class="how-step">
-          <div class="how-step-num">4</div>
-          <div class="how-step-content">
-            <h3>Send the demand letter</h3>
-            <p>One-click FCRA-compliant demand letter drafted with your evidence attached. Tracks insurer response deadlines automatically.</p>
-          </div>
-        </div>
-        <div class="how-step how-step-last">
-          <div class="how-step-num how-step-num-accent">5</div>
-          <div class="how-step-content">
-            <h3>You get paid more — we take a cut</h3>
-            <p>10–15% of the delta between the insurer's first offer and final settlement. <strong>Zero fee if we don't improve your outcome.</strong></p>
-          </div>
-        </div>
+        <div class="how-step"><div class="how-step-num">1</div><div class="how-step-content"><h3 data-i18n="how_1_title">Upload your policy</h3><p data-i18n="how_1_body">Photograph or upload your policy PDF. AI extracts coverage limits, exclusions, deductibles, and endorsements in plain English — within 60 seconds.</p></div></div>
+        <div class="how-step"><div class="how-step-num">2</div><div class="how-step-content"><h3 data-i18n="how_2_title">Document the incident</h3><p data-i18n="how_2_body">Follow the guided photo checklist. Timestamped uploads, witness info, police report linkage. AI flags missing evidence before you submit.</p></div></div>
+        <div class="how-step"><div class="how-step-num">3</div><div class="how-step-content"><h3 data-i18n="how_3_title">Get your Claim Score</h3><p data-i18n="how_3_body">AI compares the insurer's offer against your policy terms, comparable settlements, and market repair costs. Surfaces the gap instantly.</p></div></div>
+        <div class="how-step"><div class="how-step-num">4</div><div class="how-step-content"><h3 data-i18n="how_4_title">Send the demand letter</h3><p data-i18n="how_4_body">One-click FCRA-compliant demand letter drafted with your evidence attached. Tracks insurer response deadlines automatically.</p></div></div>
+        <div class="how-step how-step-last"><div class="how-step-num how-step-num-accent">5</div><div class="how-step-content"><h3 data-i18n="how_5_title">You get paid more — we take a cut</h3><p data-i18n="how_5_body">10–15% of the delta between the insurer's first offer and final settlement. <strong>Zero fee if we don't improve your outcome.</strong></p></div></div>
       </div>
-
-      <div class="how-cta">
-        <a href="pages/claim.html" class="btn btn-primary btn-lg">
-          Start My Claim Now
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
+      <div class="how-cta"><a href="pages/claim.html" class="btn btn-primary btn-lg"><span data-i18n="how_cta">Start My Claim Now</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
     </div>
   </section>
 
-  <!-- ── RESULTS / SOCIAL PROOF ─────────── -->
+  <!-- ── RESULTS ────────────────────────────────── -->
   <section class="section" id="results">
     <div class="container">
-      <div class="section-label">Real Results</div>
-      <h2 class="section-title">What ClaimMax users actually recovered.</h2>
-
-      <div class="grid-3" style="margin-top: var(--space-10);">
-        <div class="testimonial-card card">
-          <div class="testimonial-delta">+$3,900</div>
-          <div class="testimonial-detail">
-            Auto claim — rear-end collision. Initial offer: $4,200. Final settlement: $8,100.
-          </div>
-          <div class="testimonial-meta">
-            <span class="badge badge-neutral">Auto Insurance</span>
-            <span class="testimonial-time">3 weeks to resolve</span>
-          </div>
-        </div>
-        <div class="testimonial-card card">
-          <div class="testimonial-delta">+$2,100</div>
-          <div class="testimonial-detail">
-            Water damage claim. Insurer missed the endorsement covering personal property. Demand letter sent, settled in 11 days.
-          </div>
-          <div class="testimonial-meta">
-            <span class="badge badge-neutral">Renters Insurance</span>
-            <span class="testimonial-time">11 days to resolve</span>
-          </div>
-        </div>
-        <div class="testimonial-card card">
-          <div class="testimonial-delta">+$5,600</div>
-          <div class="testimonial-detail">
-            Totaled vehicle. Insurer's comp value was 30% below market. ClaimMax generated comparables and forced a reassessment.
-          </div>
-          <div class="testimonial-meta">
-            <span class="badge badge-neutral">Auto Insurance</span>
-            <span class="testimonial-time">6 weeks to resolve</span>
-          </div>
-        </div>
+      <div class="section-label" data-i18n="results_label">Real Results</div>
+      <h2 class="section-title" data-i18n="results_title">What ClaimMax users actually recovered.</h2>
+      <div class="grid-3" style="margin-top:var(--space-10)">
+        <div class="testimonial-card card"><div class="testimonial-delta">+$3,900</div><div class="testimonial-detail" data-i18n="r1_detail">Auto claim — rear-end collision. Initial offer: $4,200. Final settlement: $8,100.</div><div class="testimonial-meta"><span class="badge badge-neutral" data-i18n="r1_badge">Auto Insurance</span><span class="testimonial-time" data-i18n="r1_time">3 weeks to resolve</span></div></div>
+        <div class="testimonial-card card"><div class="testimonial-delta">+$2,100</div><div class="testimonial-detail" data-i18n="r2_detail">Water damage claim. Insurer missed the endorsement covering personal property. Demand letter sent, settled in 11 days.</div><div class="testimonial-meta"><span class="badge badge-neutral" data-i18n="r2_badge">Renters Insurance</span><span class="testimonial-time" data-i18n="r2_time">11 days to resolve</span></div></div>
+        <div class="testimonial-card card"><div class="testimonial-delta">+$5,600</div><div class="testimonial-detail" data-i18n="r3_detail">Totaled vehicle. Insurer's comp value was 30% below market. ClaimMax generated comparables and forced a reassessment.</div><div class="testimonial-meta"><span class="badge badge-neutral" data-i18n="r3_badge">Auto Insurance</span><span class="testimonial-time" data-i18n="r3_time">6 weeks to resolve</span></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ── PRICING ─────────────────────────── -->
-  <section class="section pricing-section" id="pricing" style="background: var(--color-surface);">
+  <!-- ── PRICING ────────────────────────────────── -->
+  <section class="section pricing-section" id="pricing" style="background:var(--color-surface);">
     <div class="container-narrow">
-      <div class="section-label">Pricing</div>
-      <h2 class="section-title">You only pay when you win more.</h2>
-      <p class="section-subtitle">
-        ClaimMax is 100% success-fee. No upfront cost, no subscription. If we
-        don't increase your settlement, you pay nothing.
-      </p>
-
-      <div class="pricing-card card-elevated" style="margin-top: var(--space-10);">
+      <div class="section-label" data-i18n="pricing_label">Pricing</div>
+      <h2 class="section-title" data-i18n="pricing_title">You only pay when you win more.</h2>
+      <p class="section-subtitle" data-i18n="pricing_subtitle">ClaimMax is 100% success-fee. No upfront cost, no subscription. If we don't increase your settlement, you pay nothing.</p>
+      <div class="pricing-card card-elevated" style="margin-top:var(--space-10)">
         <div class="pricing-top">
-          <div>
-            <div class="pricing-name">Success Fee Model</div>
-            <div class="pricing-desc">Applied only on the delta — the difference between the insurer's original offer and your final settlement.</div>
-          </div>
-          <div class="pricing-rate">
-            <span class="pricing-rate-num">10–15%</span>
-            <span class="pricing-rate-note">of recovery delta</span>
-          </div>
+          <div><div class="pricing-name" data-i18n="pricing_model_name">Success Fee Model</div><div class="pricing-desc" data-i18n="pricing_model_desc">Applied only on the delta — the difference between the insurer's original offer and your final settlement.</div></div>
+          <div class="pricing-rate"><span class="pricing-rate-num">10–15%</span><span class="pricing-rate-note" data-i18n="pricing_rate_note">of recovery delta</span></div>
         </div>
         <hr class="divider">
         <div class="pricing-example">
-          <div class="pricing-ex-label">Example scenario</div>
+          <div class="pricing-ex-label" data-i18n="pricing_ex_label">Example scenario</div>
           <div class="pricing-ex-grid">
-            <div class="pricing-ex-item">
-              <span class="pricing-ex-val">$4,200</span>
-              <span class="pricing-ex-key">Insurer's first offer</span>
-            </div>
-            <div class="pricing-ex-item">
-              <span class="pricing-ex-val text-primary">$8,100</span>
-              <span class="pricing-ex-key">Your final settlement</span>
-            </div>
-            <div class="pricing-ex-item">
-              <span class="pricing-ex-val">$3,900</span>
-              <span class="pricing-ex-key">Recovery delta</span>
-            </div>
-            <div class="pricing-ex-item highlight">
-              <span class="pricing-ex-val text-primary">$468</span>
-              <span class="pricing-ex-key">ClaimMax fee (12%)</span>
-            </div>
+            <div class="pricing-ex-item"><span class="pricing-ex-val">$4,200</span><span class="pricing-ex-key" data-i18n="pricing_ex_1">Insurer's first offer</span></div>
+            <div class="pricing-ex-item"><span class="pricing-ex-val text-primary">$8,100</span><span class="pricing-ex-key" data-i18n="pricing_ex_2">Your final settlement</span></div>
+            <div class="pricing-ex-item"><span class="pricing-ex-val">$3,900</span><span class="pricing-ex-key" data-i18n="pricing_ex_3">Recovery delta</span></div>
+            <div class="pricing-ex-item highlight"><span class="pricing-ex-val text-primary">$468</span><span class="pricing-ex-key" data-i18n="pricing_ex_4">ClaimMax fee (12%)</span></div>
           </div>
         </div>
         <div class="pricing-guarantees">
-          <div class="pricing-guarantee">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Free claim analysis — always
-          </div>
-          <div class="pricing-guarantee">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Zero fee if we don't improve your payout
-          </div>
-          <div class="pricing-guarantee">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            No contracts, no subscriptions
-          </div>
-          <div class="pricing-guarantee">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Transparent settlement tracking
-          </div>
+          <div class="pricing-guarantee"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="g1">Free claim analysis — always</span></div>
+          <div class="pricing-guarantee"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="g2">Zero fee if we don't improve your payout</span></div>
+          <div class="pricing-guarantee"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="g3">No contracts, no subscriptions</span></div>
+          <div class="pricing-guarantee"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="g4">Transparent settlement tracking</span></div>
         </div>
-        <a href="pages/claim.html" class="btn btn-primary btn-lg" style="width:100%; margin-top: var(--space-6);">
-          Start a Free Claim Analysis
-        </a>
+        <a href="pages/claim.html" class="btn btn-primary btn-lg" style="width:100%;margin-top:var(--space-6);justify-content:center;" data-i18n="pricing_cta">Start a Free Claim Analysis</a>
       </div>
-
-      <div class="alert alert-warning" style="margin-top: var(--space-6);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        <span><strong>Legal disclaimer:</strong> ClaimMax provides claim education and document organization — not legal advice. All communications with insurers are sent by you. We are the tool, not the party. Consult an attorney for complex disputes.</span>
+      <div class="alert alert-warning" style="margin-top:var(--space-6);">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span data-i18n="disclaimer"><strong>Legal disclaimer:</strong> ClaimMax provides claim education and document organization — not legal advice. All communications with insurers are sent by you. We are the tool, not the party. Consult an attorney for complex disputes.</span>
       </div>
     </div>
   </section>
 
-  <!-- ── FINAL CTA ───────────────────────── -->
+  <!-- ── FINAL CTA ──────────────────────────────── -->
   <section class="section final-cta-section">
-    <div class="container-narrow" style="text-align:center;">
-      <h2 class="section-title" style="max-width:none;">
-        Your insurance company has<br>lawyers. Now you have AI.
-      </h2>
-      <p class="section-subtitle" style="margin-inline:auto; margin-bottom: var(--space-8);">
-        Analyze your claim free. You only pay when we win you more money.
-      </p>
+    <div class="container-narrow" style="text-align:center">
+      <h2 class="section-title" style="max-width:none" data-i18n="final_title">Your insurance company has<br>lawyers. Now you have AI.</h2>
+      <p class="section-subtitle" style="margin-inline:auto;margin-bottom:var(--space-8)" data-i18n="final_subtitle">Analyze your claim free. You only pay when we win you more money.</p>
       <a href="pages/claim.html" class="btn btn-primary btn-lg">
-        Analyze My Claim — Free
+        <span data-i18n="final_cta">Analyze My Claim — Free</span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
   </section>
 
-  <!-- ── FOOTER ──────────────────────────── -->
+  <!-- ── FOOTER ─────────────────────────────────── -->
   <footer class="footer">
     <div class="footer-inner">
-      <a href="index.html" class="nav-logo" style="font-size:var(--text-base);">
+      <a href="index.html" class="nav-logo" style="font-size:var(--text-base)">
         <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="7" fill="var(--color-primary)"/><path d="M8 14.5L12 18.5L20 9.5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         ClaimMax
       </a>
       <ul class="footer-links">
-        <li><a href="#how-it-works">How it Works</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="pages/claim.html">Start a Claim</a></li>
+        <li><a href="#how-it-works" data-i18n="nav_how">How it Works</a></li>
+        <li><a href="#pricing" data-i18n="nav_pricing">Pricing</a></li>
+        <li><a href="pages/claim.html" data-i18n="nav_start">Start a Claim</a></li>
       </ul>
-      <div class="footer-credit">
-        <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">
-          Created with Perplexity Computer
-        </a>
-      </div>
+      <div class="footer-credit"><a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer" data-i18n="footer_credit">Created with Perplexity Computer</a></div>
     </div>
   </footer>
 
+  <!-- ── EXIT INTENT MODAL ──────────────────────── -->
+  <div class="exit-modal-overlay" id="exit-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="exit-title" style="display:none">
+    <div class="exit-modal">
+      <button class="exit-modal-close" onclick="document.getElementById('exit-modal-overlay').style.display='none'" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="exit-modal-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <h2 class="exit-modal-title" id="exit-title" data-i18n="exit_title">Before you go…</h2>
+      <p class="exit-modal-subtitle" data-i18n="exit_subtitle">The average ClaimMax user recovers <strong>$3,900 more</strong> than the insurer's initial offer. Your analysis is free — you only pay if we win.</p>
+      <div class="exit-modal-stats">
+        <div class="exit-stat"><span class="exit-stat-val">$3,900</span><span class="exit-stat-label">Avg. additional recovery</span></div>
+        <div class="exit-stat"><span class="exit-stat-val">0%</span><span class="exit-stat-label">Fee if we don't win</span></div>
+      </div>
+      <button class="btn btn-primary btn-lg" id="exit-cta-btn" style="width:100%;justify-content:center" data-i18n="exit_cta">Get My Free Analysis</button>
+      <button class="exit-dismiss" id="exit-dismiss-btn" data-i18n="exit_dismiss">No thanks, I'll leave money on the table</button>
+    </div>
+  </div>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/exit-intent.js"></script>
 </body>
 </html>

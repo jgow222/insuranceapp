@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/payment.css">
+  <link rel="stylesheet" href="../css/exit.css">
   <script src="../js/theme.js"></script>
 </head>
 <body>
@@ -35,6 +36,7 @@
       ClaimMax
     </a>
     <div class="nav-actions">
+      <button class="btn-lang" data-lang-toggle onclick="toggleLanguage()" aria-label="Switch to Spanish">ES</button>
       <button class="nav-theme-toggle" data-theme-toggle aria-label="Toggle theme"></button>
     </div>
   </nav>
@@ -49,10 +51,10 @@
             <polyline points="20 6 9 17 4 12"/>
           </svg>
         </div>
-        <h1 class="payment-title">Almost there — lock in your claim</h1>
-        <p class="payment-subtitle">
+        <h1 class="payment-title" data-i18n="payment_title">Almost there — lock in your claim</h1>
+        <p class="payment-subtitle" data-i18n="payment_subtitle">
           Your demand letter is ready. To send it and activate deadline tracking,
-          enter your settlement details. <strong>You only pay if you win more.</strong>
+          enter your settlement details. <strong data-i18n="payment_subtitle_strong">You only pay if you win more.</strong>
         </p>
       </div>
 
@@ -61,49 +63,49 @@
         <!-- LEFT: Fee Agreement ─────────────────── -->
         <div class="payment-form-col">
           <div class="card">
-            <h2 class="panel-title">Settlement Agreement</h2>
-            <p class="panel-desc" style="margin-bottom:var(--space-6);">
+            <h2 class="panel-title" data-i18n="agreement_title">Settlement Agreement</h2>
+            <p class="panel-desc" style="margin-bottom:var(--space-6);" data-i18n="agreement_desc">
               When your claim is resolved, enter the final settlement amount.
               ClaimMax charges 12% of the recovery delta — zero if we don't improve your payout.
             </p>
 
             <div class="form-group">
-              <label class="form-label" for="final-name">Full Name</label>
-              <input type="text" class="form-input" id="final-name" placeholder="Jane Smith">
+              <label class="form-label" for="final-name" data-i18n="name_label">Full Name</label>
+              <input type="text" class="form-input" id="final-name" data-i18n="name_placeholder" placeholder="Jane Smith">
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="final-email">Email Address</label>
-              <input type="email" class="form-input" id="final-email" placeholder="jane@example.com">
-              <span class="form-hint">We'll send claim updates and deadline reminders here.</span>
+              <label class="form-label" for="final-email" data-i18n="email_label">Email Address</label>
+              <input type="email" class="form-input" id="final-email" data-i18n="email_placeholder" placeholder="jane@example.com">
+              <span class="form-hint" data-i18n="email_hint">We'll send claim updates and deadline reminders here.</span>
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="final-offer">Insurer's Original Offer ($)</label>
+              <label class="form-label" for="final-offer" data-i18n="original_offer_label">Insurer's Original Offer ($)</label>
               <input type="number" class="form-input" id="final-offer" placeholder="4200" min="0" oninput="recalcFee()">
             </div>
 
             <div class="form-group">
               <label class="form-label" for="final-settlement">
-                Final Settlement Amount ($)
-                <span class="label-note">— Enter when claim is resolved</span>
+                <span data-i18n="final_settlement_label">Final Settlement Amount ($)</span>
+                <span class="label-note" data-i18n="final_settlement_note">— Enter when claim is resolved</span>
               </label>
               <input type="number" class="form-input" id="final-settlement" placeholder="8100" min="0" oninput="recalcFee()">
-              <span class="form-hint">Leave blank for now. We'll prompt you when the insurer responds.</span>
+              <span class="form-hint" data-i18n="final_settlement_hint">Leave blank for now. We'll prompt you when the insurer responds.</span>
             </div>
 
             <!-- Fee preview -->
             <div class="fee-preview" id="fee-preview" style="display:none;">
               <div class="fee-row">
-                <span>Recovery delta</span>
+                <span data-i18n="fee_delta_label">Recovery delta</span>
                 <span id="fee-delta">—</span>
               </div>
               <div class="fee-row">
-                <span>ClaimMax fee (12%)</span>
+                <span data-i18n="fee_amount_label">ClaimMax fee (12%)</span>
                 <span id="fee-amount" class="fee-highlight">—</span>
               </div>
               <div class="fee-row fee-total">
-                <span>You keep</span>
+                <span data-i18n="fee_keep_label">You keep</span>
                 <span id="fee-keep" class="fee-keep-val">—</span>
               </div>
             </div>
@@ -112,23 +114,23 @@
             <label class="agreement-check">
               <input type="checkbox" id="agree-terms" onchange="toggleSubmit()">
               <span>
-                I agree to the
-                <a href="#" onclick="return false;" class="terms-link">ClaimMax Success Fee Agreement</a>.
-                I understand that ClaimMax charges 10–15% of the recovery delta only when my final
-                settlement exceeds the insurer's original offer. Zero fee if no improvement.
+                <span data-i18n="agree_prefix">I agree to the</span>
+                <a href="#" onclick="return false;" class="terms-link" data-i18n="agree_link">ClaimMax Success Fee Agreement</a>.
+                <span data-i18n="agree_suffix">I understand that ClaimMax charges 10–15% of the recovery delta only when my final
+                settlement exceeds the insurer's original offer. Zero fee if no improvement.</span>
               </span>
             </label>
 
             <!-- Stripe mock CTA -->
             <button class="btn btn-primary btn-lg stripe-btn" id="stripe-btn" disabled onclick="handlePaymentSubmit()">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-              Activate Claim Tracking — Stripe Connect
+              <span data-i18n="stripe_btn">Activate Claim Tracking — Stripe Connect</span>
             </button>
-            <p class="stripe-note">Powered by Stripe Connect. Payment collected only upon successful claim resolution.</p>
+            <p class="stripe-note" data-i18n="stripe_note">Powered by Stripe Connect. Payment collected only upon successful claim resolution.</p>
 
             <div class="alert alert-warning" style="margin-top:var(--space-4);">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-              <span><strong>Note:</strong> Connecting Stripe authorizes ClaimMax to collect the success fee automatically when your settlement is confirmed. No charge until then.</span>
+              <span data-i18n="stripe_warning"><strong>Note:</strong> Connecting Stripe authorizes ClaimMax to collect the success fee automatically when your settlement is confirmed. No charge until then.</span>
             </div>
           </div>
         </div>
@@ -138,27 +140,27 @@
 
           <!-- Claim summary card -->
           <div class="card summary-card">
-            <h3 class="summary-title">Claim Summary</h3>
+            <h3 class="summary-title" data-i18n="summary_title">Claim Summary</h3>
 
             <div class="summary-status">
-              <span class="badge badge-blue">Demand Letter Sent</span>
+              <span class="badge badge-blue" data-i18n="letter_sent_badge">Demand Letter Sent</span>
               <span class="summary-date" id="summary-date"></span>
             </div>
 
             <div class="summary-row">
-              <span class="summary-key">Policy type</span>
+              <span class="summary-key" data-i18n="sum_type_label">Policy type</span>
               <span class="summary-val" id="sum-type">Auto Insurance</span>
             </div>
             <div class="summary-row">
-              <span class="summary-key">Initial offer</span>
+              <span class="summary-key" data-i18n="sum_offer_label">Initial offer</span>
               <span class="summary-val" id="sum-offer">$4,200</span>
             </div>
             <div class="summary-row">
-              <span class="summary-key">Estimated entitlement</span>
+              <span class="summary-key" data-i18n="sum_est_label">Estimated entitlement</span>
               <span class="summary-val primary-val" id="sum-est">$8,100</span>
             </div>
             <div class="summary-row">
-              <span class="summary-key">Claim score</span>
+              <span class="summary-key" data-i18n="sum_score_label">Claim score</span>
               <span class="summary-val"><span class="badge badge-green">82 / 100</span></span>
             </div>
 
@@ -169,7 +171,7 @@
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               </div>
               <div>
-                <div class="deadline-mini-label">Insurer response deadline</div>
+                <div class="deadline-mini-label" data-i18n="sum_deadline_label">Insurer response deadline</div>
                 <div class="deadline-mini-date" id="sum-deadline">—</div>
               </div>
             </div>
@@ -177,31 +179,31 @@
 
           <!-- What happens next -->
           <div class="next-steps-card">
-            <h3 class="summary-title">What Happens Next</h3>
+            <h3 class="summary-title" data-i18n="next_title">What Happens Next</h3>
             <div class="next-steps">
               <div class="next-step">
                 <div class="next-step-icon">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .99h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91A16 16 0 0015.1 17.92l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
                 </div>
-                <span>Insurer has 30 days to respond to your demand letter.</span>
+                <span data-i18n="next_1">Insurer has 30 days to respond to your demand letter.</span>
               </div>
               <div class="next-step">
                 <div class="next-step-icon">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
                 </div>
-                <span>You'll receive an email alert when the deadline approaches.</span>
+                <span data-i18n="next_2">You'll receive an email alert when the deadline approaches.</span>
               </div>
               <div class="next-step">
                 <div class="next-step-icon">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
                 </div>
-                <span>When settled, enter your final amount and ClaimMax charges the success fee automatically.</span>
+                <span data-i18n="next_3">When settled, enter your final amount and ClaimMax charges the success fee automatically.</span>
               </div>
               <div class="next-step">
                 <div class="next-step-icon" style="color:var(--color-primary)">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                 </div>
-                <span>If the insurer denies or stonewalls, we'll recommend next steps including attorney referrals.</span>
+                <span data-i18n="next_4">If the insurer denies or stonewalls, we'll recommend next steps including attorney referrals.</span>
               </div>
             </div>
           </div>
@@ -220,8 +222,8 @@
           <polyline points="20 6 9 17 4 12"/>
         </svg>
       </div>
-      <h2 class="modal-title">Claim Activated</h2>
-      <p class="modal-desc">
+      <h2 class="modal-title" data-i18n="modal_title">Claim Activated</h2>
+      <p class="modal-desc" data-i18n="modal_desc">
         Your demand letter is on file and deadline tracking is live.
         We'll email you updates at every step. You'll only be charged
         when your final settlement exceeds the original offer.
@@ -229,27 +231,49 @@
       <div class="modal-stats">
         <div class="modal-stat">
           <span class="modal-stat-val" id="modal-recovery">$3,900</span>
-          <span class="modal-stat-label">Recovery opportunity</span>
+          <span class="modal-stat-label" data-i18n="modal_stat_1">Recovery opportunity</span>
         </div>
         <div class="modal-stat">
           <span class="modal-stat-val">30 days</span>
-          <span class="modal-stat-label">Insurer deadline</span>
+          <span class="modal-stat-label" data-i18n="modal_stat_2">Insurer deadline</span>
         </div>
       </div>
-      <a href="../index.html" class="btn btn-primary btn-lg" style="width:100%;">
+      <a href="../index.html" class="btn btn-primary btn-lg" style="width:100%;" data-i18n="modal_cta">
         Back to Dashboard
       </a>
+    </div>
+  </div>
+
+  <!-- ── EXIT INTENT MODAL ──────────────────────── -->
+  <div class="exit-modal-overlay" id="exit-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="exit-title" style="display:none">
+    <div class="exit-modal">
+      <button class="exit-modal-close" onclick="document.getElementById('exit-modal-overlay').style.display='none'" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="exit-modal-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <h2 class="exit-modal-title" id="exit-title" data-i18n="exit_title">Before you go…</h2>
+      <p class="exit-modal-subtitle" data-i18n="exit_subtitle">The average ClaimMax user recovers <strong>$3,900 more</strong> than the insurer's initial offer. Your analysis is free — you only pay if we win.</p>
+      <div class="exit-modal-stats">
+        <div class="exit-stat"><span class="exit-stat-val">$3,900</span><span class="exit-stat-label" data-i18n="exit_stat_1">Avg. additional recovery</span></div>
+        <div class="exit-stat"><span class="exit-stat-val">0%</span><span class="exit-stat-label" data-i18n="exit_stat_2">Fee if we don't win</span></div>
+      </div>
+      <button class="btn btn-primary btn-lg" id="exit-cta-btn" style="width:100%;justify-content:center" data-i18n="exit_cta">Get My Free Analysis</button>
+      <button class="exit-dismiss" id="exit-dismiss-btn" data-i18n="exit_dismiss">No thanks, I'll leave money on the table</button>
     </div>
   </div>
 
   <footer class="footer">
     <div class="footer-inner">
       <span class="footer-credit">
-        <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+        <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer" data-i18n="footer_credit">Created with Perplexity Computer</a>
       </span>
     </div>
   </footer>
 
   <script src="../js/payment.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/exit-intent.js"></script>
 </body>
 </html>
