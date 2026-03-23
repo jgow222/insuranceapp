@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start a Claim — ClaimMax</title>
+
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800,900&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/claim.css">
+  <script src="../js/theme.js"></script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="7" fill="var(--color-primary)"/><path d="M8 14.5L12 18.5L20 9.5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      ClaimMax
+    </a>
+    <div class="nav-actions">
+      <button class="nav-theme-toggle" data-theme-toggle aria-label="Toggle theme"></button>
+    </div>
+  </nav>
+
+  <!-- MAIN CLAIM FLOW -->
+  <main class="claim-main">
+    <div class="claim-container">
+
+      <!-- Step header -->
+      <div class="claim-header">
+        <h1 class="claim-title">Analyze Your Claim</h1>
+        <p class="claim-subtitle">Free analysis. You only pay if we improve your settlement.</p>
+      </div>
+
+      <!-- Step indicator -->
+      <div class="steps" id="step-indicator" role="navigation" aria-label="Claim steps">
+        <div class="step active" data-step="1">
+          <div class="step-num">1</div>
+          <div class="step-label">Policy Upload</div>
+        </div>
+        <div class="step-connector" id="conn-1-2"></div>
+        <div class="step" data-step="2">
+          <div class="step-num">2</div>
+          <div class="step-label">Incident Details</div>
+        </div>
+        <div class="step-connector" id="conn-2-3"></div>
+        <div class="step" data-step="3">
+          <div class="step-num">3</div>
+          <div class="step-label">Claim Score</div>
+        </div>
+        <div class="step-connector" id="conn-3-4"></div>
+        <div class="step" data-step="4">
+          <div class="step-num">4</div>
+          <div class="step-label">Demand Letter</div>
+        </div>
+      </div>
+
+      <!-- ── STEP 1: Policy Upload ─────────────────── -->
+      <div class="step-panel active" id="panel-1">
+        <div class="card">
+          <h2 class="panel-title">Upload Your Insurance Policy</h2>
+          <p class="panel-desc">Our AI reads your policy and extracts coverage limits, exclusions, deductibles, and endorsements — in plain English.</p>
+
+          <div class="upload-zone" id="policy-upload-zone" role="button" tabindex="0" aria-label="Upload policy document">
+            <input type="file" id="policy-file" accept=".pdf,.jpg,.jpeg,.png" hidden>
+            <div class="upload-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            </div>
+            <p class="upload-title">Drop your policy here, or <span class="upload-link">browse</span></p>
+            <p class="upload-note">Supports PDF, JPG, PNG — Auto or renters insurance</p>
+          </div>
+
+          <div class="upload-preview" id="policy-preview" style="display:none;">
+            <div class="upload-preview-file">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <span id="policy-filename">document.pdf</span>
+            </div>
+            <span class="badge badge-green">Uploaded</span>
+          </div>
+
+          <!-- Policy type selector -->
+          <div class="form-group" style="margin-top: var(--space-6);">
+            <label class="form-label" for="policy-type">Policy Type</label>
+            <select class="form-select" id="policy-type">
+              <option value="">Select your coverage type...</option>
+              <option value="auto">Auto Insurance</option>
+              <option value="renters">Renters Insurance</option>
+              <option value="homeowners">Homeowners Insurance</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="insurer-offer">Insurer's Initial Offer ($)</label>
+            <input type="number" class="form-input" id="insurer-offer" placeholder="e.g. 4200" min="0">
+            <span class="form-hint">Leave blank if no offer received yet.</span>
+          </div>
+
+          <div class="panel-actions">
+            <button class="btn btn-primary btn-lg" onclick="goToStep(2)" id="step1-next">
+              Analyze Policy
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── STEP 2: Incident Details ──────────────── -->
+      <div class="step-panel" id="panel-2">
+        <div class="card">
+          <h2 class="panel-title">Document the Incident</h2>
+          <p class="panel-desc">Strong evidence is the foundation of a strong claim. Upload photos, add details, and our AI flags anything missing before you submit.</p>
+
+          <div class="form-group">
+            <label class="form-label" for="incident-date">Date of Incident</label>
+            <input type="date" class="form-input" id="incident-date">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="incident-desc">Describe What Happened</label>
+            <textarea class="form-textarea" id="incident-desc" placeholder="Describe the incident in detail. Include location, time, other parties involved, conditions, and any immediate actions taken..."></textarea>
+          </div>
+
+          <!-- Photo upload -->
+          <div class="form-group">
+            <label class="form-label">Damage Photos</label>
+            <div class="upload-zone photo-upload-zone" id="photo-upload-zone" role="button" tabindex="0">
+              <input type="file" id="photo-files" accept="image/*" multiple hidden>
+              <div class="upload-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              </div>
+              <p class="upload-title">Add damage photos</p>
+              <p class="upload-note">Timestamped uploads. More photos = stronger claim.</p>
+            </div>
+            <div class="photo-grid" id="photo-grid"></div>
+          </div>
+
+          <!-- Evidence checklist -->
+          <div class="evidence-checklist">
+            <div class="evidence-header">
+              <span class="section-label" style="margin-bottom:0;">Evidence Checklist</span>
+              <span class="badge badge-neutral" id="checklist-score">0 / 5</span>
+            </div>
+            <div class="checklist-items">
+              <label class="checklist-item">
+                <input type="checkbox" class="checklist-check" onchange="updateChecklist()">
+                <span>Damage photos uploaded</span>
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" class="checklist-check" onchange="updateChecklist()">
+                <span>Police / incident report number</span>
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" class="checklist-check" onchange="updateChecklist()">
+                <span>Witness contact info</span>
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" class="checklist-check" onchange="updateChecklist()">
+                <span>Repair estimates obtained</span>
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" class="checklist-check" onchange="updateChecklist()">
+                <span>Medical / expense receipts</span>
+              </label>
+            </div>
+            <div class="alert alert-warning" id="evidence-warning" style="margin-top:var(--space-4);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <span>Complete at least 3 checklist items for the strongest demand letter.</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="police-report">Police / Incident Report # (optional)</label>
+            <input type="text" class="form-input" id="police-report" placeholder="e.g. 2026-04719">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="repair-estimate">Repair Estimate Total ($) (optional)</label>
+            <input type="number" class="form-input" id="repair-estimate" placeholder="e.g. 8100" min="0">
+          </div>
+
+          <div class="panel-actions">
+            <button class="btn btn-secondary" onclick="goToStep(1)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              Back
+            </button>
+            <button class="btn btn-primary btn-lg" onclick="goToStep(3)">
+              Get Claim Score
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── STEP 3: Claim Score ────────────────────── -->
+      <div class="step-panel" id="panel-3">
+        <div class="card score-card">
+          <div class="score-analyzing" id="score-analyzing">
+            <div class="analyzing-spinner"></div>
+            <h2>Analyzing your claim…</h2>
+            <p class="panel-desc">Comparing policy terms, comparable settlements, and market repair costs.</p>
+            <div class="progress-bar" style="width:100%;margin-top:var(--space-6);">
+              <div class="progress-fill" id="analysis-progress" style="width:0%"></div>
+            </div>
+            <span class="progress-label" id="progress-label">Reading policy terms…</span>
+          </div>
+
+          <div class="score-result" id="score-result" style="display:none;">
+            <div class="score-top">
+              <div>
+                <h2 class="panel-title">Your Claim Score</h2>
+                <p class="panel-desc">Based on policy language, evidence strength, and comparable settlements.</p>
+              </div>
+              <div class="score-ring" id="score-ring">
+                <svg width="140" height="140" viewBox="0 0 140 140">
+                  <circle cx="70" cy="70" r="58" fill="none" stroke="var(--color-surface-offset)" stroke-width="10"/>
+                  <circle cx="70" cy="70" r="58" fill="none" stroke="var(--color-primary)" stroke-width="10"
+                    stroke-dasharray="364.4" stroke-dashoffset="364.4"
+                    stroke-linecap="round" id="score-arc"
+                    style="transition: stroke-dashoffset 1.2s cubic-bezier(0.16,1,0.3,1)"/>
+                </svg>
+                <div class="score-ring-value" id="score-value">0</div>
+              </div>
+            </div>
+
+            <div class="score-breakdown">
+              <div class="breakdown-item">
+                <div class="breakdown-label">Insurer's Initial Offer</div>
+                <div class="breakdown-val muted" id="bd-offer">$4,200</div>
+              </div>
+              <div class="breakdown-item">
+                <div class="breakdown-label">Estimated Entitlement</div>
+                <div class="breakdown-val primary" id="bd-entitlement">$8,100</div>
+              </div>
+              <div class="breakdown-item highlight">
+                <div class="breakdown-label">Recovery Opportunity</div>
+                <div class="breakdown-val green" id="bd-delta">$3,900</div>
+              </div>
+            </div>
+
+            <div class="score-findings">
+              <h3 class="findings-title">What We Found</h3>
+              <ul class="findings-list">
+                <li class="finding-item finding-good">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Coverage endorsement applies — insurer's offer excludes applicable OEM parts provision
+                </li>
+                <li class="finding-item finding-good">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Market repair estimate exceeds insurer's comp by 32%
+                </li>
+                <li class="finding-item finding-warn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  Witness statement not provided — would strengthen position
+                </li>
+              </ul>
+            </div>
+
+            <div class="panel-actions">
+              <button class="btn btn-secondary" onclick="goToStep(2)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Add More Evidence
+              </button>
+              <button class="btn btn-primary btn-lg" onclick="goToStep(4)">
+                Generate Demand Letter
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── STEP 4: Demand Letter ──────────────────── -->
+      <div class="step-panel" id="panel-4">
+        <!-- Demand letter panel is rendered by demand.js, or link to demand page -->
+        <div class="card">
+          <div class="alert alert-success" style="margin-bottom:var(--space-6);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Demand letter ready.</strong> Review and send below, or open in the full Letter Manager.</span>
+          </div>
+
+          <h2 class="panel-title">Your FCRA-Compliant Demand Letter</h2>
+          <p class="panel-desc">Drafted with your evidence attached. Tracks insurer response deadlines automatically.</p>
+
+          <div class="letter-preview">
+            <div class="letter-meta">
+              <span class="badge badge-neutral">Draft</span>
+              <span class="letter-date" id="letter-date"></span>
+            </div>
+            <div class="letter-body" id="letter-body">
+              <p><strong>[Your Name]</strong><br>[Your Address]<br>[City, State ZIP]<br><br></p>
+              <p><strong>[Insurance Company Name]</strong><br>Claims Department<br><br></p>
+              <p>RE: Claim #[CLAIM NUMBER] — Demand for Fair Settlement</p>
+              <br>
+              <p>Dear Claims Adjuster,</p>
+              <br>
+              <p>I am writing to formally dispute the settlement offer of <strong id="letter-offer">$4,200</strong> provided on [DATE] regarding the above-referenced claim.</p>
+              <br>
+              <p>After careful review of my policy, including all applicable endorsements, and consulting independent market repair estimates, I have determined that my documented losses total <strong id="letter-total">$8,100</strong> — a difference of <strong id="letter-delta" style="color:var(--color-primary)">$3,900</strong> above your current offer.</p>
+              <br>
+              <p>The basis for this demand is as follows:</p>
+              <ul>
+                <li>Policy Section [X.X] provides coverage for OEM replacement parts, which were not included in your initial assessment.</li>
+                <li>Three independent repair estimates confirm a total repair cost of [AMOUNT], consistent with market rates in [LOCATION].</li>
+                <li>Documentation of all damages is attached hereto as Exhibit A.</li>
+              </ul>
+              <br>
+              <p>I request a response within <strong>30 days</strong> of receipt of this letter, as required under your state's fair claims settlement practices regulations.</p>
+              <br>
+              <p>If I do not receive an acceptable response within this timeframe, I reserve all rights to pursue additional remedies, including filing a complaint with the State Insurance Commissioner.</p>
+              <br>
+              <p>Sincerely,<br><strong>[Your Name]</strong></p>
+            </div>
+          </div>
+
+          <!-- Deadline tracker -->
+          <div class="deadline-tracker">
+            <div class="deadline-header">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-warning)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <h3>Response Deadline Tracker</h3>
+            </div>
+            <div class="deadline-info">
+              <div class="deadline-item">
+                <span class="deadline-label">Letter sent</span>
+                <span class="deadline-val" id="deadline-sent">—</span>
+              </div>
+              <div class="deadline-item">
+                <span class="deadline-label">Insurer must respond by</span>
+                <span class="deadline-val deadline-red" id="deadline-due">—</span>
+              </div>
+              <div class="deadline-item">
+                <span class="deadline-label">Days remaining</span>
+                <span class="deadline-val" id="deadline-remaining">30 days</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-actions">
+            <button class="btn btn-secondary" onclick="goToStep(3)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              Back to Score
+            </button>
+            <a href="payment.html" class="btn btn-primary btn-lg" id="send-letter-btn">
+              Send Letter &amp; Finalize Claim
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-credit">
+        <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="../js/claim.js"></script>
+</body>
+</html>
